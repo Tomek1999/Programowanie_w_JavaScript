@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <label for="liczba1">Liczba 1:</label>
+    <input type="text" id="liczba1" oninput="przelicz()"><br>
+
+    <label for="liczba2">Liczba 2:</label>
+    <input type="text" id="liczba2" oninput="przelicz()"><br>
+
+    <label for="liczba3">Liczba 3:</label>
+    <input type="text" id="liczba3" oninput="przelicz()"><br>
+
+    <label for="liczba4">Liczba 4:</label>
+    <input type="text" id="liczba4" oninput="przelicz()"><br>
+
+    <p>Suma: <span id="suma"></span></p>
+    <p>Średnia: <span id="srednia"></span></p>
+    <p>Min: <span id="min"></span></p>
+    <p>Max: <span id="max"></span></p>
+
+    <script>
+        function przelicz() {
+            var liczba1 = parseFloat(document.getElementById("liczba1").value) || 0;
+            var liczba2 = parseFloat(document.getElementById("liczba2").value) || 0;
+            var liczba3 = parseFloat(document.getElementById("liczba3").value) || 0;
+            var liczba4 = parseFloat(document.getElementById("liczba4").value) || 0;
+
+            var suma = liczba1 + liczba2 + liczba3 + liczba4;
+            var srednia = suma / 4;
+            var min = Math.min(liczba1, liczba2, liczba3, liczba4);
+            var max = Math.max(liczba1, liczba2, liczba3, liczba4);
+
+            document.getElementById("suma").innerHTML = suma;
+            document.getElementById("srednia").innerHTML = srednia;
+            document.getElementById("min").innerHTML = min;
+            document.getElementById("max").innerHTML = max;
+        }
+    </script>
+</body>
+</html>

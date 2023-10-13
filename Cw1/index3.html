@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Statystyk</title>
+</head>
+<body>
+    <h1>Kalkulator Statystyk</h1>
+    
+    <div id="inputFields">
+        <label for="liczba1">Liczba 1:</label>
+        <input type="text" class="liczba" oninput="przelicz()"><br>
+
+        <label for="liczba2">Liczba 2:</label>
+        <input type="text" class="liczba" oninput="przelicz()"><br>
+
+        <label for="liczba3">Liczba 3:</label>
+        <input type="text" class="liczba" oninput="przelicz()"><br>
+    </div>
+
+    <button onclick="dodajPole()">Dodaj pole</button>
+    <button onclick="usunPole()">Usuń pole</button>
+
+    <p>Suma: <span id="suma"></span></p>
+    <p>Średnia: <span id="srednia"></span></p>
+    <p>Min: <span id="min"></span></p>
+    <p>Max: <span id="max"></span></p>
+
+    <script>
+        function przelicz() {
+            var liczby = document.getElementsByClassName("liczba");
+            var liczbyArr = [];
+            
+            for (var i = 0; i < liczby.length; i++) {
+                var val = parseFloat(liczby[i].value) || 0;
+                liczbyArr.push(val);
+            }
+
+            var suma = liczbyArr.reduce(function(a, b) { return a + b; }, 0);
+            var srednia = suma / liczbyArr.length;
+            var min = Math.min(...liczbyArr);
+            var max = Math.max(...liczbyArr);
+
+            document.getElementById("suma").innerHTML = suma;
+            document.getElementById("srednia").innerHTML = srednia;
+            document.getElementById("min").innerHTML = min;
+            document.getElementById("max").innerHTML = max;
+        }
+
+        function dodajPole() {
+            var inputFields = document.getElementById("inputFields");
+            var newLabel = document.createElement("label");
+            newLabel.innerHTML = "Liczba " + (document.getElementsByClassName("liczba").length + 1) + ":";
+            var newInput = document.createElement("input");
+            newInput.type = "text";
+            newInput.className = "liczba";
+            newInput.oninput = przelicz;
+            var br = document.createElement("br");
+            inputFields.appendChild(newLabel);
+            inputFields.appendChild(newInput);
+            inputFields.appendChild(br);
+        }
+
+        function usunPole() {
+            var inputFields = document.getElementById("inputFields");
+            var liczby = document.getElementsByClassName("liczba");
+            if (liczby.length > 0) {
+                inputFields.removeChild(inputFields.lastElementChild); // usuń ostatni element br
+                inputFields.removeChild(inputFields.lastElementChild); // usuń ostatnie pole tekstowe
+                inputFields.removeChild(inputFields.lastElementChild); // usuń ostatni label
+                przelicz();
+            }
+        }
+    </script>
+</body>
+</html>
