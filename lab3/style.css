@@ -1,0 +1,94 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.audio-letters {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.audio-letters audio {
+  display: none;
+}
+
+.audio-letters-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 0;
+  width: 100px;
+  background-color: rgb(110, 134, 255);
+  color: white;
+  border-radius: 6px;
+}
+
+.audio-letters-box span {
+  color: black;
+  margin-bottom: 4px;
+}
+
+.start-recording-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.start-recording-buttons button {
+  border: none;
+  padding: 10px;
+  background-color: rgb(100, 181, 88);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.start-recording-buttons button:hover {
+  background-color: rgba(100, 181, 88, 0.8);
+}
+
+.stop-recording {
+  background-color: rgb(255, 91, 91) !important;
+}
+
+.channels {
+  display: flex;
+  flex-direction: column;
+}
+
+.channels-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.channels-buttons button {
+  border: none;
+  padding: 10px;
+  background-color: rgb(193, 126, 240);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
