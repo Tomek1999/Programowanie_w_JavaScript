@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#slider {
+  width: 600px;
+  height: 400px;
+  margin: 100px auto 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.bottomButtons {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.bottomButtons button {
+  height: 20px;
+  width: 20px;
+  border: 2px solid white;
+  margin: 0 4px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.bottomButtons .active {
+  background: black !important;
+}
+
+#prevButton,
+#nextButton {
+  position: absolute;
+  bottom: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 16px;
+  border: 2px solid white;
+  padding: 2px 14px;
+  border-radius: 6px;
+}
+
+#prevButton {
+  left: 20px;
+}
+
+#nextButton {
+  right: 20px;
+}
