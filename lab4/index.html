@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Note Keep</title>
+  </head>
+  <body>
+    <main class="main-section">
+      <header class="header"><h1>Note Keep</h1></header>
+      <form class="note-form-container">
+        <h2 class="operation-text">Add note</h2>
+        <div class="input-box">
+          <p>Title</p>
+          <input type="text" class="note-tite" />
+        </div>
+        <div class="input-box">
+          <p>Description</p>
+          <textarea class="note-description"></textarea>
+        </div>
+        <div class="input-box">
+          <p>Color</p>
+          <select name="note-color" id="note-color">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+          </select>
+        </div>
+        <div class="input-box pin-note">
+          <p>Pin note</p>
+          <input type="checkbox" class="note-pin" />
+        </div>
+        <button type="submit" class="add-note-button">Add note</button>
+      </form>
+      <div class="pinned-notes-container">
+        <h2>Pinned notes</h2>
+        <ul class="pinned-notes-list"></ul>
+      </div>
+      <div class="notes-container">
+        <h2>Notes</h2>
+        <ul class="notes-list"></ul>
+      </div>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
